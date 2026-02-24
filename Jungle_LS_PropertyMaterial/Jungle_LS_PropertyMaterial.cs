@@ -48,6 +48,33 @@ namespace Jungle_LS_PropertyMaterial
                 Clipboard.SetText($"Номер материала: {numberMaterial}\n{tableType}\n{tableName}\n{materialType}");
                 return ReturnCodes.RC_OK;
             }
+            else if(material is MaterialDBConcreteSP concreteSP)
+            {
+                string tableType = concreteSP.getTableType().ToString();
+                string tableName = concreteSP.getTableName().ToString();
+                string materialType = concreteSP.getMaterialClass();
+                MessageBox.Show($"Номер материала: {numberMaterial}\n{tableType}\n{tableName}\n{materialType}");
+                Clipboard.SetText($"Номер материала: {numberMaterial}\n{tableType}\n{tableName}\n{materialType}");
+                return ReturnCodes.RC_OK;
+            }
+            else if(material is CMaterialDBConcreteSNiP concreteSNiP)
+            {
+                string tableType = concreteSNiP.getTableType().ToString();
+                string tableName = concreteSNiP.getTableName().ToString();
+                string materialType = concreteSNiP.getMaterialClass();
+                MessageBox.Show($"Номер материала: {numberMaterial}\n{tableType}\n{tableName}\n{materialType}");
+                Clipboard.SetText($"Номер материала: {numberMaterial}\n{tableType}\n{tableName}\n{materialType}");
+                return ReturnCodes.RC_OK;
+            }
+            else if(material is MaterialDBConcreteEurocode concreteEurocode)
+            {
+                string tableType = concreteEurocode.getTableType().ToString();
+                string tableName = concreteEurocode.getTableName().ToString();
+                string materialType = concreteEurocode.getMaterialClass();
+                MessageBox.Show($"Номер материала: {numberMaterial}\n{tableType}\n{tableName}\n{materialType}");
+                Clipboard.SetText($"Номер материала: {numberMaterial}\n{tableType}\n{tableName}\n{materialType}");
+                return ReturnCodes.RC_OK;
+            }
             else
             {
                 MessageBox.Show("У выбранного стержня не стальной материал");

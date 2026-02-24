@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{92BEFE79-67D8-4E36-943D-2CEED922B73F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Jungle_LS_CreateBarPerpendicularly</RootNamespace>
+    <AssemblyName>Jungle_LS_CreateBarPerpendicularly</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FECalcul, Version=10.12.12.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\FECalcul.dll</HintPath>
+    </Reference>
+    <Reference Include="FEGeometry, Version=10.12.12.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\FEGeometry.dll</HintPath>
+    </Reference>
+    <Reference Include="FEMControls, Version=10.12.12.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\FEMControls.dll</HintPath>
+    </Reference>
+    <Reference Include="FEModel">
+      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\FEModel.dll</HintPath>
+    </Reference>
+    <Reference Include="LiraAPI">
+      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\LiraAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="PureAbstractions">
+      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\PureAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Jungle_LS_CreateBarPerpendicularly.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetPath)" "C:\Users\lebro\AppData\Roaming\Lira Soft\Lira10.12\Addins" /R/Y</PostBuildEvent>
+  </PropertyGroup>
+</Project>
