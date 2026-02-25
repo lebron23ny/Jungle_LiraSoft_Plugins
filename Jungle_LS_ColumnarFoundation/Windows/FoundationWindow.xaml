@@ -7,42 +7,81 @@
              xmlns:vm="clr-namespace:Jungle_LS_ColumnarFoundation.ViewModel"
              mc:Ignorable="d" 
              WindowStyle="ToolWindow"
-             Title="J_Столбчатый фундамент" Height="250" Width="400"              
-             MaxHeight="250" MinHeight="250"
+             Title="J_Столбчатый фундамент" Height="240" Width="400"              
+             MaxHeight="240" MinHeight="240"
              MaxWidth="400" MinWidth="400">
 
     <Grid>
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Text="Размер надколонника b1, м"/>
-            <TextBlock Grid.Row="1" Text="Размер надколонника b2, м"/>
-            <TextBlock Grid.Row="2" Text="Высота надколонника h, м"/>
-            <TextBlock Grid.Row="3" Text="Размер плиты w1, м"/>
-            <TextBlock Grid.Row="4" Text="Размер плиты w2, м"/>
-            <TextBlock Grid.Row="5" Text="Толщина плиты, м"/>
-            <TextBlock Grid.Row="6" Text="Класс бетона"/>
+        <TabControl>
+            
+            <TabItem Header="Параметры">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="Размер надколонника b1, м"/>
+                    <TextBlock Grid.Row="1" Text="Размер надколонника b2, м"/>
+                    <TextBlock Grid.Row="2" Text="Высота надколонника h, м"/>
+                    <TextBlock Grid.Row="3" Text="Размер плиты w1, м"/>
+                    <TextBlock Grid.Row="4" Text="Размер плиты w2, м"/>
+                    <TextBlock Grid.Row="5" Text="Толщина плиты, м"/>
+                    <TextBlock Grid.Row="6" Text="Класс бетона"/>
 
-            <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding B1}"/>
-            <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding B2}"/>
-            <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Height}"/>
-            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Width1}"/>
-            <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Width2}"/>
-            <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding ThickPlate}"/>
-            <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding ClassConcrete}"/>
-            <Button Grid.Row="7" Grid.ColumnSpan="2" Content="Создать" Click="Button_Click"/>
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding B1}"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding B2}"/>
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding Height}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Width1}"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Width2}"/>
+                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding ThickPlate}"/>
+                    <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding ClassConcrete}"/>
+                    
+                </Grid>
+            </TabItem>
+            <TabItem Header="Коэффициенты постели">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Text="Коэффициенты постели" Grid.ColumnSpan="2" Margin="10 0 0 0"/>
+                        <TextBlock Grid.Row="1" Text="C1, кН/м^3"/>
+                        <TextBlock Grid.Row="2" Text="C2, кН/м"/>
+                        <TextBlock Grid.Row="3" Text="Cx, кН/м"/>
+                        <TextBlock Grid.Row="4" Text="Cy, кН/м"/>
+
+                        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding C1}"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding C2}"/>
+                        <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding Cx}"/>
+                        <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding Cy}"/>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+             <Button Grid.Row="1" Grid.ColumnSpan="2" Content="Создать" Click="Button_Click"/>
+        
         </Grid>
     </Grid>
 </Window>

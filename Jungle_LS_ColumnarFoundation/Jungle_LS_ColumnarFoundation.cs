@@ -8,10 +8,6 @@ using Jungle_LS_ColumnarFoundation.Windows;
 using LiraAPI;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace Jungle_LS_ColumnarFoundation
 {
@@ -27,11 +23,17 @@ namespace Jungle_LS_ColumnarFoundation
 
         private bool _response = false;
 
+        private double c1;
+        private double c2;
+        private double cx;
+        private double cy;
+
         IModel imodel;
         private int numberMat;
         private int numberSect;
 
         Action<double, double, double, double, double, double, string, bool> _calculate;
+        Action<double, double, double, double> _elasticBasicParam;
         public ReturnCodes ExecuteProgram_Prime(IModelAPI pModelAPI, Results_Key pCurentCase)
         {
             imodel = pModelAPI as IModel;
@@ -60,7 +62,8 @@ namespace Jungle_LS_ColumnarFoundation
             }
 
             _calculate = setProperty;
-            FoundationWindow foundationWindow = new FoundationWindow(_calculate);
+            _elasticBasicParam = setElasticBasicParam;
+            FoundationWindow foundationWindow = new FoundationWindow(_calculate, _elasticBasicParam);
             foundationWindow.ShowDialog();
 
             if (!_response)
@@ -135,11 +138,6 @@ namespace Jungle_LS_ColumnarFoundation
             CNode nPl3 = new CNode(imodel, X3 + _width1 / 2, Y3 + _width2 / 2, Z3 - _height);
             CNode nPl4 = new CNode(imodel, X3 + _width1 / 2, Y3 - _width2 / 2, Z3 - _height);
 
-            //imodel.addNode(nPl1);
-            //imodel.addNode(nPl2);
-            //imodel.addNode(nPl3);
-            //imodel.addNode(nPl4);
-
             PolygonEdgeLine polygonEdgeLinePl1 = new PolygonEdgeLine(nPl1.m_X, nPl1.m_Y, nPl1.m_Z, architecturePolygonPlate);
             PolygonEdgeLine polygonEdgeLinePl2 = new PolygonEdgeLine(nPl2.m_X, nPl2.m_Y, nPl2.m_Z, architecturePolygonPlate);
             PolygonEdgeLine polygonEdgeLinePl3 = new PolygonEdgeLine(nPl3.m_X, nPl3.m_Y, nPl3.m_Z, architecturePolygonPlate);
@@ -152,7 +150,7 @@ namespace Jungle_LS_ColumnarFoundation
 
             architecturePlate.addContour(architecturePolygonPlate);
 
-
+            #region Назначение настроек триангуляции
             ArchitectureElementMeshSetting aMeshSetting = new ArchitectureElementMeshSetting();
             aMeshSetting.setStep(0.5);
             //try
@@ -165,7 +163,25 @@ namespace Jungle_LS_ColumnarFoundation
             //    //System.Windows.MessageBox.Show(ex.Message);
             //}
 
+
             architecturePlate.MeshSetting = aMeshSetting;
+            #endregion
+
+            #region Назначение коэффициентов постели
+            CElasticBasis cElasticBasis = new CElasticBasis();
+            cElasticBasis.PaternElement = architecturePlate;
+
+            cElasticBasis.set_TypeElement(e_ElasticBasis_Type.EBT_PLATE);
+            cElasticBasis.set_C1(c1*1000);
+            cElasticBasis.set_C2(c2*1000);
+
+            cElasticBasis.set_ShearCx(cx * 1000);
+            cElasticBasis.set_ShearCy(cy * 1000);
+
+            architecturePlate.setElasticBasis(cElasticBasis);
+            #endregion
+
+
 
             architecturePlate.setMaterial(numberMat);
             architecturePlate.setSection(numberSect);
@@ -183,6 +199,14 @@ namespace Jungle_LS_ColumnarFoundation
             _b2 = b2;
             _classConcrete = classConcrete;
             _response = response;
+        }
+
+        private void setElasticBasicParam(double c1, double c2, double cx, double cy)
+        {
+            this.c1 = c1;
+            this.c2 = c2;
+            this.cx = cx;
+            this.cy = cy;
         }
     }
 }

@@ -86,5 +86,57 @@ namespace Jungle_LS_ColumnarFoundation.ViewModel
             }
         }
 
-    }
+		private double _c1 = 0;
+
+		public double C1
+		{
+			get { return _c1; }
+			set 
+			{ 
+				_c1 = value; 
+				OnPropertyChanged(nameof(C1));
+            }
+		}
+
+		private double _c2 = 0;
+
+		public double C2
+		{
+			get { return _c2; }
+			set 
+			{ 
+				_c2 = value;
+				OnPropertyChanged(nameof(C2));
+            }
+		}
+
+		private double _cx = 0;
+
+		public double Cx
+		{
+			get { return _cx; }
+			set 
+			{ 
+				_cx = value; 
+				OnPropertyChanged(nameof(Cx));
+            }
+		}
+
+		private double _cy = 0;
+
+		public double Cy
+		{
+			get { return _cy; }
+			set 
+			{ 
+				_cy = value; 
+				OnPropertyChanged(nameof(Cy));
+            }
+		}
+
+
+
+
+
+	}
 }
