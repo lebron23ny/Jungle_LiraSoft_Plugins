@@ -153,6 +153,7 @@ namespace Jungle_LS_ColumnarFoundation
             #region Назначение настроек триангуляции
             ArchitectureElementMeshSetting aMeshSetting = new ArchitectureElementMeshSetting();
             aMeshSetting.setStep(0.5);
+            aMeshSetting.setIsARBcreate(true);
             //try
             //{
             //    aMeshSetting.setType(e_ArchitectureElementMeshType.AEMT_ReGridQuad);
