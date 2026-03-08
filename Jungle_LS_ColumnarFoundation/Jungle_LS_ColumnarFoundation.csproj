@@ -77,9 +77,23 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Jungle_Tools12\Jungle_Tools12.csproj">
+      <Project>{7c596a45-4a57-49cd-a3e6-ba8ea84ff69c}</Project>
+      <Name>Jungle_Tools12</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Jungle_Tools2024\Jungle_Tools2024.csproj">
+      <Project>{a6a56a26-11d8-4e56-a2d7-14f8a137a72c}</Project>
+      <Name>Jungle_Tools2024</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(TargetPath)" "C:\Users\lebro\AppData\Roaming\Lira Soft\Lira10.12\Addins" /R/Y
-xcopy "$(TargetPath)" "C:\Users\lebro\AppData\Roaming\Lira Soft\LIRA10 2024\Addins" /R/Y</PostBuildEvent>
+xcopy "$(TargetPath)" "C:\Users\lebro\AppData\Roaming\Lira Soft\LIRA10 2024\Addins" /R/Y
+xcopy "Jungle_Tools12.dll" "C:\Users\lebro\AppData\Roaming\Lira Soft\Lira10.12\Addins" /R/Y
+xcopy "Jungle_Tools12.dll" "C:\Users\lebro\AppData\Roaming\Lira Soft\LIRA10 2024\Addins" /R/Y
+xcopy "Jungle_Tools2024.dll" "C:\Users\lebro\AppData\Roaming\Lira Soft\Lira10.12\Addins" /R/Y
+xcopy "Jungle_Tools2024.dll" "C:\Users\lebro\AppData\Roaming\Lira Soft\LIRA10 2024\Addins" /R/Y</PostBuildEvent>
   </PropertyGroup>
 </Project>

@@ -4,7 +4,6 @@ using FEModel.Interfaces;
 using FEModel.Node;
 using LiraAPI;
 using System.Collections.Generic;
-using System.Media;
 using System.Windows.Forms;
 
 namespace Jungle_LS_CreateBarPerpendicularly
@@ -62,6 +61,7 @@ namespace Jungle_LS_CreateBarPerpendicularly
             CBar selectedBar = (CBar)imodel.getAllElement(numberSelectedBar);
             var firstN = selectedBar.getNode(0);
             var secondN = selectedBar.getNode(1);
+            //selectedBar.setNo
 
             var nodeA = imodel.getNode((int)firstN);
             var nodeB = imodel.getNode((int)secondN);

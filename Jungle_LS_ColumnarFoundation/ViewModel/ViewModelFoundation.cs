@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using System.Collections.Generic;
 
 namespace Jungle_LS_ColumnarFoundation.ViewModel
 {
@@ -135,7 +130,44 @@ namespace Jungle_LS_ColumnarFoundation.ViewModel
 		}
 
 
+		private List<string> _paramsTria = new List<string>()
+		{
+            "None", "Delaunay", "ReGrid", "ReGrid2", "ReGridQuad"
+        };
 
+		public List<string> ParamsTria
+		{
+			get { return _paramsTria; }
+			set
+			{
+				_paramsTria = value;
+				OnPropertyChanged(nameof(ParamsTria));
+			}
+		}
+
+		private string _selectedTria;
+
+		public string SelectedTria
+		{
+			get { return _selectedTria; }
+			set 
+			{ 
+				_selectedTria = value;
+                OnPropertyChanged(nameof(SelectedTria));
+            }
+		}
+
+		private double _step = 0.5;
+
+		public double Step
+		{
+			get { return _step; }
+			set 
+			{ 
+				_step = value;
+                OnPropertyChanged(nameof(Step));
+            }
+		}
 
 
 	}

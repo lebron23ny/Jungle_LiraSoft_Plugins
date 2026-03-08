@@ -22,10 +22,10 @@ namespace Jungle_LS_ColumnarFoundation.Windows
     {
         ViewModel.ViewModelFoundation viewModel;
 
-        Action<double, double, double, double, double, double, string, bool> _calculate;
+        Action<double, double, double, double, double, double, string, string, double, bool> _calculate;
         Action<double, double, double, double> _elasticBasicParam;
         public FoundationWindow(
-            Action<double, double, double, double, double, double, string, bool> calculate,
+            Action<double, double, double, double, double, double, string, string, double, bool> calculate,
             Action<double, double, double, double> elasticBasicParam)
         {
             InitializeComponent();
@@ -37,7 +37,7 @@ namespace Jungle_LS_ColumnarFoundation.Windows
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _calculate(viewModel.Width1, viewModel.Width2, viewModel.ThickPlate, viewModel.Height, viewModel.B1, viewModel.B2, viewModel.ClassConcrete, true);
+            _calculate(viewModel.Width1, viewModel.Width2, viewModel.ThickPlate, viewModel.Height, viewModel.B1, viewModel.B2, viewModel.ClassConcrete, viewModel.SelectedTria, viewModel.Step, true);
             _elasticBasicParam(viewModel.C1, viewModel.C2, viewModel.Cx, viewModel.Cy);
             this.Close();
         }

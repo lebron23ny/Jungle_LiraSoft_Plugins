@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{92BEFE79-67D8-4E36-943D-2CEED922B73F}</ProjectGuid>
+    <ProjectGuid>{7C596A45-4A57-49CD-A3E6-BA8EA84FF69C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Jungle_LS_CreateBarPerpendicularly</RootNamespace>
-    <AssemblyName>Jungle_LS_CreateBarPerpendicularly</AssemblyName>
+    <RootNamespace>Jungle_Tools12</RootNamespace>
+    <AssemblyName>Jungle_Tools12</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,21 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FEModel, Version=10.12.12.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="FEModel">
       <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\10.12\FEModel.dll</HintPath>
-    </Reference>
-    <Reference Include="LiraAPI, Version=10.12.12.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\10.12\LiraAPI.dll</HintPath>
-    </Reference>
-    <Reference Include="PureAbstractions, Version=10.12.12.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\10.12\PureAbstractions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,11 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Jungle_LS_CreateBarPerpendicularly.cs" />
+    <Compile Include="Tools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetPath)" "C:\Users\lebro\AppData\Roaming\Lira Soft\Lira10.12\Addins" /R/Y</PostBuildEvent>
-  </PropertyGroup>
 </Project>

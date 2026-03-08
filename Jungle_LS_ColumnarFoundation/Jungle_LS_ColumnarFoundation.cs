@@ -20,6 +20,8 @@ namespace Jungle_LS_ColumnarFoundation
         private double _b1;
         private double _b2;
         private string _classConcrete;
+        private string _typeMesh;
+        private double _step;
 
         private bool _response = false;
 
@@ -32,7 +34,7 @@ namespace Jungle_LS_ColumnarFoundation
         private int numberMat;
         private int numberSect;
 
-        Action<double, double, double, double, double, double, string, bool> _calculate;
+        Action<double, double, double, double, double, double, string, string, double, bool> _calculate;
         Action<double, double, double, double> _elasticBasicParam;
         public ReturnCodes ExecuteProgram_Prime(IModelAPI pModelAPI, Results_Key pCurentCase)
         {
@@ -152,20 +154,31 @@ namespace Jungle_LS_ColumnarFoundation
 
             #region Назначение настроек триангуляции
             ArchitectureElementMeshSetting aMeshSetting = new ArchitectureElementMeshSetting();
-            aMeshSetting.setStep(0.5);
+            aMeshSetting.setStep(_step);
             aMeshSetting.setIsARBcreate(true);
+
+            string typeMesh = _typeMesh;
+            int version = typeof(CNode).Assembly.GetName().Version.Minor;
+            if(version != 2024)
+            {
+                Jungle_Tools12.Tools.SetMeshType(aMeshSetting, typeMesh);
+            }
+            else
+            {
+                Jungle_Tools2024.Tools.SetMeshType(aMeshSetting, typeMesh);
+            }
             //try
-            //{
-            //    aMeshSetting.setType(e_ArchitectureElementMeshType.AEMT_ReGridQuad);
+                //{
+                //    aMeshSetting.setType(e_ArchitectureElementMeshType.AEMT_ReGridQuad);
 
-            //}
-            //catch(Exception ex)
-            //{
-            //    //System.Windows.MessageBox.Show(ex.Message);
-            //}
+                //}
+                //catch(Exception ex)
+                //{
+                //    //System.Windows.MessageBox.Show(ex.Message);
+                //}
 
 
-            architecturePlate.MeshSetting = aMeshSetting;
+                architecturePlate.MeshSetting = aMeshSetting;
             #endregion
 
             #region Назначение коэффициентов постели
@@ -190,7 +203,9 @@ namespace Jungle_LS_ColumnarFoundation
             imodel.addArchitectureElement(architecturePlate);
         }
 
-        private void setProperty(double w1, double w2, double th, double h, double b1, double b2, string classConcrete, bool response)
+        private void setProperty(double w1, double w2, double th, double h, double b1, double b2, string classConcrete,
+            string typeMesh, double step,
+            bool response)
         {
             _width1 = w1;
             _width2 = w2;
@@ -199,6 +214,8 @@ namespace Jungle_LS_ColumnarFoundation
             _b1 = b1;
             _b2 = b2;
             _classConcrete = classConcrete;
+            _typeMesh = typeMesh;
+            _step = step;
             _response = response;
         }
 

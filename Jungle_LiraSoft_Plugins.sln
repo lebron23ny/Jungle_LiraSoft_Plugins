@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jungle_LS_CreateBarPerpendi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jungle_LS_ColumnarFoundation", "Jungle_LS_ColumnarFoundation\Jungle_LS_ColumnarFoundation.csproj", "{96AE88F9-4A27-42E7-9B08-4AC9B4769507}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jungle_Tools12", "Jungle_Tools12\Jungle_Tools12.csproj", "{7C596A45-4A57-49CD-A3E6-BA8EA84FF69C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Jungle_Tools2024", "Jungle_Tools2024\Jungle_Tools2024.csproj", "{A6A56A26-11D8-4E56-A2D7-14F8A137A72C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{96AE88F9-4A27-42E7-9B08-4AC9B4769507}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96AE88F9-4A27-42E7-9B08-4AC9B4769507}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96AE88F9-4A27-42E7-9B08-4AC9B4769507}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C596A45-4A57-49CD-A3E6-BA8EA84FF69C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C596A45-4A57-49CD-A3E6-BA8EA84FF69C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C596A45-4A57-49CD-A3E6-BA8EA84FF69C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C596A45-4A57-49CD-A3E6-BA8EA84FF69C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6A56A26-11D8-4E56-A2D7-14F8A137A72C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6A56A26-11D8-4E56-A2D7-14F8A137A72C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6A56A26-11D8-4E56-A2D7-14F8A137A72C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6A56A26-11D8-4E56-A2D7-14F8A137A72C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
