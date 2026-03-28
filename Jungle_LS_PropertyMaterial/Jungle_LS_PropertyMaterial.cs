@@ -75,6 +75,15 @@ namespace Jungle_LS_PropertyMaterial
                 Clipboard.SetText($"Номер материала: {numberMaterial}\n{tableType}\n{tableName}\n{materialType}");
                 return ReturnCodes.RC_OK;
             }
+            else if(material is CMaterialDBWood matWood)
+            {
+                string tableType = matWood.getTableType().ToString();
+                string tableName = matWood.getTableName().ToString();
+                string materialType = matWood.getMaterialClass();
+                MessageBox.Show($"Номер материала: {numberMaterial}\n{tableType}\n{tableName}\n{materialType}");
+                Clipboard.SetText($"Номер материала: {numberMaterial}\n{tableType}\n{tableName}\n{materialType}");
+                return ReturnCodes.RC_OK;
+            }
             else
             {
                 MessageBox.Show("У выбранного стержня не стальной материал");

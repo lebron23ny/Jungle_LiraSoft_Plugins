@@ -32,19 +32,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FEMaterial">
-      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\FEMaterial.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\10.12\FEMaterial.dll</HintPath>
     </Reference>
     <Reference Include="FEModel">
-      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\FEModel.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\10.12\FEModel.dll</HintPath>
     </Reference>
     <Reference Include="LiraAPI">
-      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\LiraAPI.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\10.12\LiraAPI.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDBAdapter">
-      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\MaterialDBAdapter.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\10.12\MaterialDBAdapter.dll</HintPath>
     </Reference>
     <Reference Include="PureAbstractions">
-      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\PureAbstractions.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\OneDrive\Рабочий стол\библиотеки\LiraSoft\10.12\PureAbstractions.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
